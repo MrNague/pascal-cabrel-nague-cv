@@ -2,15 +2,14 @@
   --ink: #17263b;
   --body: #344054;
   --muted: #667085;
-  --blue: #294f78;
-  --blue-deep: #172f4d;
-  --blue-pale: #e8eff7;
+  --green: #294f78;
+  --green-deep: #172f4d;
+  --green-pale: #e8eff7;
   --orange: #d47b49;
-  --paper: #ffffff;
+  --paper: #f6f5f5;
   --line: #dfe5df;
   --sidebar-text: #eef3f9;
   --sidebar-muted: #c3cfde;
-
   --display: "Manrope", "Segoe UI", sans-serif;
   --sans: "DM Sans", Arial, sans-serif;
   --mono: "DM Mono", Consolas, monospace;
@@ -26,16 +25,16 @@
 }
 
 html {
-  background: #e9edf2;
+  background: #e9eeeb;
 }
 
 body {
   margin: 0;
   padding: 18px 0;
-  background: #e9edf2;
+  background: #e9eeeb;
   color: var(--body);
-  font-size: 9.5pt;
-  line-height: 1.4;
+  font-size: 10.25pt;
+  line-height: 1.43;
 }
 
 a {
@@ -74,7 +73,7 @@ a:hover {
   page-break-after: auto;
 }
 
-/* Seitenleiste */
+/* Barre latérale de la deuxième page */
 
 .sidebar {
   position: relative;
@@ -84,16 +83,16 @@ a:hover {
   margin: -12mm 0 -12mm -12mm;
   padding: 12mm 7mm 11mm;
   color: var(--sidebar-text);
-  background: var(--blue-deep);
+  background: var(--green-deep);
 }
 
 .side-section {
-  margin-bottom: 6mm;
+  margin-bottom: 7mm;
 }
 
 .side-heading {
-  margin: 0 0 2.5mm;
-  padding-bottom: 1.5mm;
+  margin: 0 0 3.2mm;
+  padding-bottom: 1.7mm;
   border-bottom: 1px solid #ffffff45;
   color: #c8d8e8;
   font: 500 8pt var(--mono);
@@ -105,11 +104,11 @@ a:hover {
   margin: 0;
   padding: 0 0 0 4mm;
   color: var(--sidebar-text);
-  font-size: 8.6pt;
+  font-size: 9.2pt;
 }
 
 .side-list li {
-  margin: 0 0 1.2mm;
+  margin: 0 0 1.35mm;
   padding-left: 1mm;
 }
 
@@ -122,69 +121,101 @@ a:hover {
 }
 
 .language-list div {
-  margin-bottom: 2mm;
+  margin-bottom: 2.2mm;
 }
 
 .language-list dt {
   color: var(--sidebar-text);
-  font-size: 8.8pt;
+  font-size: 9.2pt;
   font-weight: 600;
 }
 
 .language-list dd {
   margin: 0;
   color: var(--sidebar-muted);
-  font-size: 8.2pt;
+  font-size: 8.7pt;
 }
 
 .side-monogram {
-  margin: 4mm 0 12mm;
-  color: #f4f7fb;
-  font: 800 30pt/0.95 var(--display);
-  letter-spacing: -0.08em;
+  margin: 4mm 0 15mm;
+  color: #f4f6f0;
+  font: 700 35pt/0.9 var(--display);
+  letter-spacing: -0.12em;
 }
 
 .side-monogram span {
-  color: var(--orange);
+  color: #e69a69;
 }
 
 .side-subheading {
-  margin: 3mm 0 1mm;
+  margin: 4mm 0 1mm;
   color: #c9d8e9;
-  font: 600 8pt var(--display);
+  font: 600 8.2pt var(--display);
 }
 
 .side-skills {
   margin: 0;
   color: var(--sidebar-text);
-  font-size: 8.2pt;
-  line-height: 1.45;
+  font-size: 8.6pt;
+  line-height: 1.5;
+}
+
+.side-worklocation {
+  margin: 0;
+  color: var(--sidebar-text);
+  font-size: 9pt;
+  line-height: 1.4;
 }
 
 .side-method {
-  margin-top: 2mm;
+  margin-top: 3mm;
 }
 
+/* Cadre réservé à la signature */
+
 .side-note {
+  display: flex;
+  min-height: 36mm;
   margin-top: auto;
   margin-bottom: 10mm;
   padding: 3.5mm;
+  align-items: flex-end;
   border: 1px solid #ffffff35;
   background: #ffffff08;
 }
 
-.note-symbol {
-  color: #e69a69;
-  font: 14pt var(--mono);
-}
-
 .side-note p {
-  margin: 1.5mm 0 0;
+  margin: 0;
   color: #e6edf6;
-  font: 600 8.5pt/1.45 var(--display);
+  font: 600 8.8pt var(--display);
 }
 
-/* Kopfbereich der ersten Seite */
+/* Pieds de page */
+
+.page-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4mm;
+  margin-top: auto;
+  padding-top: 3mm;
+  border-top: 1px solid var(--line);
+  color: #8a93a0;
+  font: 7pt var(--mono);
+  letter-spacing: 0.02em;
+}
+
+.page-footer strong {
+  color: var(--green);
+  font-weight: 500;
+}
+
+.page-footer strong i {
+  color: #98a1ae;
+  font-style: normal;
+}
+
+/* En-tête de la première page */
 
 .page-one {
   display: flex;
@@ -194,17 +225,16 @@ a:hover {
 
 .page-one .cv-header {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 34mm;
+  grid-template-columns: minmax(0, 1fr) 30mm;
   grid-template-areas:
     "identity photo"
     "profile photo"
     "contact contact";
-  column-gap: 7mm;
+  column-gap: 8mm;
   margin-top: -10mm;
   margin-left: -12mm;
-  padding: 10mm 12mm 4mm;
-  border-bottom: 1px solid var(--line);
-  background: #f0f3f6;
+  padding: 10mm 0 4mm 12mm;
+  background-color: #f1f3f1;
 }
 
 .header-copy {
@@ -213,9 +243,9 @@ a:hover {
 }
 
 .overline {
-  margin: 0 0 2mm;
-  color: var(--blue);
-  font: 500 7.4pt var(--mono);
+  margin: 0 0 3mm;
+  color: var(--green);
+  font: 500 7.6pt var(--mono);
   letter-spacing: 0.09em;
   text-transform: uppercase;
 }
@@ -228,84 +258,88 @@ a:hover {
   color: var(--orange);
 }
 
+.page-one .overline {
+  margin-bottom: 2mm;
+}
+
 .cv-header h1 {
   margin: 0;
   color: var(--ink);
-  font: 800 25pt/1.03 var(--display);
-  letter-spacing: -0.065em;
+  font: 800 27pt/1.03 var(--display);
+  letter-spacing: -0.07em;
+}
+
+.page-one .cv-header h1 {
+  font-size: 25pt;
 }
 
 .cv-header h1 em,
 .page-two-header h1 em {
-  color: var(--blue);
+  color: var(--green);
   font-style: normal;
 }
 
 .headline {
-  margin: 2mm 0 0;
+  margin: 2.5mm 0 0;
   color: #49566a;
-  font: 600 10.5pt var(--display);
+  font: 600 11pt var(--display);
 }
 
 .subheadline {
   margin: 1mm 0 0;
   color: var(--muted);
-  font-size: 8.2pt;
+  font-size: 8.7pt;
 }
 
 .profile-photo {
+  display: block;
+  width: 31mm;
+  height: 38mm;
+  margin: 0 auto 8mm;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.page-one .profile-photo {
   grid-area: photo;
   align-self: start;
-  display: block;
-  width: 38mm;
-  height: 38mm;
-  margin: 2mm auto 0;
+  width: 40mm;
+  height: 40mm;
+  margin: 2mm -10mm 0 0;
   border-radius: 50%;
-  object-fit: cover;
   object-position: center 28%;
 }
 
 .profile-section {
   grid-area: profile;
-  margin-top: 3.5mm;
-}
-
-.section-title {
-  display: flex;
-  align-items: baseline;
-  gap: 2mm;
-  margin: 0 0 2mm;
-  color: var(--ink);
-  font: 700 11pt var(--display);
-  letter-spacing: -0.02em;
-}
-
-.section-title span {
-  color: var(--orange);
-  font: 500 7.3pt var(--mono);
-  letter-spacing: 0.08em;
+  margin-top: 4mm;
 }
 
 .profile-section .section-title {
-  margin-bottom: 1.4mm;
+  margin-bottom: 1.6mm;
 }
 
 .profile-text {
   margin: 0;
   color: #475366;
-  font-size: 8.7pt;
+  font-size: 9.8pt;
+  line-height: 1.5;
+}
+
+.page-one .profile-text {
+  font-size: 9pt;
   line-height: 1.42;
 }
 
 .contact-section {
   grid-area: contact;
-  margin-top: 3.5mm;
+  margin-top: 4mm;
 }
 
 .contact-heading {
   margin: 0 0 1.5mm;
-  color: var(--blue);
-  font: 500 7.3pt var(--mono);
+  color: var(--green);
+  font: 500 7.4pt var(--mono);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -313,17 +347,17 @@ a:hover {
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 1.5mm 3.5mm;
+  gap: 1.5mm 4mm;
 }
 
 .contact-item {
   display: flex;
-  min-width: 0;
   align-items: center;
   gap: 1.5mm;
+  min-width: 0;
   margin: 0;
   color: var(--body);
-  font-size: 7.4pt;
+  font-size: 7.7pt;
   line-height: 1.25;
   overflow-wrap: anywhere;
 }
@@ -333,20 +367,19 @@ a:hover {
   width: 4mm;
   height: 4mm;
   fill: none;
-  stroke: var(--blue);
+  stroke: var(--green);
   stroke-width: 1.8;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
-/* Erste Seite: Studium und Erfahrung */
+/* Colonne de gauche : même largeur visible sur les deux pages */
 
 .page-one-body {
   display: grid;
   flex: 1;
   min-height: 0;
-  grid-template-columns: 55mm minmax(0, 1fr);
-  margin-bottom: -12mm;
+  grid-template-columns: 67mm minmax(0, 1fr);
   margin-left: -12mm;
 }
 
@@ -355,6 +388,24 @@ a:hover {
   padding: 6mm 7mm 23mm;
 }
 
+.page-one-sidebar .side-heading {
+  margin-bottom: 2.5mm;
+}
+
+.page-one-content {
+  padding: 6mm 0 0 9mm;
+}
+
+.page-one-content .education-section {
+  margin-top: 0;
+}
+
+.page-one-content .experience-section {
+  margin-top: 5.4mm;
+}
+
+/* Chronologie des études et des expériences */
+
 .page-content {
   display: flex;
   min-width: 0;
@@ -362,35 +413,23 @@ a:hover {
   padding-left: 9mm;
 }
 
-.page-one-content {
-  padding-top: 6mm;
-}
-
-.cv-section {
-  margin-top: 5mm;
-}
-
-.education-section {
-  margin-top: 0;
-}
-
 .timeline-entry {
   display: grid;
-  grid-template-columns: 18mm minmax(0, 1fr);
-  gap: 3mm;
-  margin-top: 3mm;
+  grid-template-columns: 22mm minmax(0, 1fr);
+  gap: 3.5mm;
+  margin-top: 3.3mm;
 }
 
 .entry-date {
-  padding-top: 0.5mm;
-  color: var(--blue);
-  font: 500 7.8pt/1.4 var(--mono);
+  padding-top: 0.6mm;
+  color: var(--green);
+  font: 500 8.1pt/1.45 var(--mono);
   white-space: nowrap;
 }
 
 .entry-body {
   min-width: 0;
-  padding-left: 3mm;
+  padding-left: 3.2mm;
   border-left: 1px solid #cbd5e1;
 }
 
@@ -398,39 +437,39 @@ a:hover {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 3mm;
+  gap: 4mm;
 }
 
 .entry-body h3 {
   margin: 0;
   color: var(--ink);
-  font: 700 9.2pt/1.3 var(--display);
-  letter-spacing: -0.015em;
+  font: 700 10pt/1.3 var(--display);
+  letter-spacing: -0.02em;
 }
 
 .entry-type {
   color: #818b98;
-  font: 6.8pt var(--mono);
+  font: 7pt var(--mono);
   white-space: nowrap;
 }
 
 .entry-meta {
-  margin: 0.8mm 0 1.2mm;
+  margin: 0.8mm 0 1.4mm;
   color: var(--muted);
-  font-size: 8pt;
-  line-height: 1.3;
+  font-size: 8.7pt;
+  line-height: 1.35;
 }
 
 .entry-bullets {
   margin: 0;
-  padding-left: 3.5mm;
+  padding-left: 3.7mm;
   color: #435064;
-  font-size: 8.2pt;
-  line-height: 1.35;
+  font-size: 9.1pt;
+  line-height: 1.4;
 }
 
 .entry-bullets li {
-  margin: 0 0 0.7mm;
+  margin: 0 0 0.75mm;
   padding-left: 0.4mm;
 }
 
@@ -440,10 +479,10 @@ a:hover {
 }
 
 .experience-section .timeline-entry + .timeline-entry {
-  margin-top: 3.5mm;
+  margin-top: 4.2mm;
 }
 
-/* Zweite Seite: Projekte */
+/* Deuxième page : projets */
 
 .sidebar-page-two {
   padding-top: 13mm;
@@ -454,35 +493,35 @@ a:hover {
 }
 
 .page-two-header {
-  padding: 0 0 3.5mm;
+  padding: 0 0 4.2mm;
   border-bottom: 1px solid var(--line);
 }
 
 .page-two-header h1 {
   margin: 0;
   color: var(--ink);
-  font: 800 21pt/1.08 var(--display);
-  letter-spacing: -0.055em;
+  font: 800 22pt/1.08 var(--display);
+  letter-spacing: -0.065em;
 }
 
 .page-two-header > p:last-child {
-  margin: 1.5mm 0 0;
+  margin: 2mm 0 0;
   color: var(--muted);
-  font-size: 7.8pt;
+  font-size: 8pt;
 }
 
 .project-list {
   display: flex;
   flex-direction: column;
-  gap: 3.2mm;
-  padding-top: 3mm;
+  gap: 4mm;
+  padding-top: 3.5mm;
 }
 
 .project-entry {
   display: grid;
-  grid-template-columns: 8mm minmax(0, 1fr);
-  gap: 2mm;
-  padding-bottom: 2.6mm;
+  grid-template-columns: 10mm minmax(0, 1fr);
+  gap: 2.5mm;
+  padding-bottom: 3mm;
   border-bottom: 1px solid var(--line);
 }
 
@@ -492,37 +531,37 @@ a:hover {
 }
 
 .project-number {
-  padding-top: 0.5mm;
+  padding-top: 0.6mm;
   color: var(--orange);
-  font: 500 7.5pt var(--mono);
+  font: 500 8pt var(--mono);
 }
 
 .project-title-row {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 2mm;
+  gap: 2.5mm;
 }
 
 .project-title-row h2 {
-  max-width: 80%;
+  max-width: 81%;
   margin: 0;
   color: var(--ink);
-  font: 700 9.8pt/1.25 var(--display);
-  letter-spacing: -0.025em;
+  font: 700 11.2pt/1.25 var(--display);
+  letter-spacing: -0.035em;
 }
 
 .project-status {
   flex: 0 0 auto;
-  padding: 0.7mm 1.5mm;
+  padding: 0.8mm 1.8mm;
   border-radius: 9mm;
-  font: 500 6.3pt var(--mono);
+  font: 500 6.8pt var(--mono);
   white-space: nowrap;
 }
 
 .status-done {
   color: #294f78;
-  background: var(--blue-pale);
+  background: var(--green-pale);
 }
 
 .status-active {
@@ -531,64 +570,63 @@ a:hover {
 }
 
 .project-meta {
-  margin: 0.8mm 0 1.4mm;
+  margin: 1mm 0 2mm;
   color: var(--muted);
-  font-size: 7.5pt;
+  font-size: 8.3pt;
 }
 
 .project-summary {
-  margin: 0 0 1.2mm;
+  margin: 0 0 1.7mm;
   color: #465267;
-  font-size: 8.1pt;
-  line-height: 1.35;
+  font-size: 9.4pt;
+  line-height: 1.4;
 }
 
 .project-bullets {
   margin: 0;
-  padding-left: 3.5mm;
+  padding-left: 4mm;
   color: #39465a;
-  font-size: 7.9pt;
-  line-height: 1.32;
+  font-size: 9pt;
+  line-height: 1.38;
 }
 
 .project-bullets li {
-  margin-bottom: 0.6mm;
-  padding-left: 0.4mm;
+  margin-bottom: 0.7mm;
+  padding-left: 0.5mm;
 }
 
 .project-bullets li::marker {
   color: var(--orange);
-  font-size: 6.5pt;
+  font-size: 7pt;
 }
 
 .project-bullets strong {
-  color: var(--blue-deep);
+  color: var(--green-deep);
 }
 
 .project-stack {
-  margin: 1.5mm 0 0;
-  padding-top: 1mm;
+  margin: 2mm 0 0;
+  padding-top: 1.3mm;
   border-top: 1px dotted #d2dae4;
   color: #657083;
-  font-size: 7.2pt;
-  line-height: 1.3;
-  overflow-wrap: anywhere;
+  font-size: 8.2pt;
+  line-height: 1.35;
 }
 
 .project-stack b {
-  margin-right: 1mm;
-  color: var(--blue);
-  font: 500 6.7pt var(--mono);
+  margin-right: 1.5mm;
+  color: var(--green);
+  font: 500 7pt var(--mono);
   text-transform: uppercase;
 }
 
 .project-repo {
   display: inline-flex;
   align-items: center;
-  gap: 1mm;
-  margin-top: 1mm;
-  color: var(--blue);
-  font-size: 7pt;
+  gap: 1.5mm;
+  margin-top: 1.5mm;
+  color: var(--green);
+  font-size: 7.6pt;
   font-weight: 700;
 }
 
@@ -596,31 +634,7 @@ a:hover {
   color: var(--orange);
 }
 
-/* Pieds de page */
-
-.page-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 4mm;
-  margin-top: auto;
-  padding-top: 2.5mm;
-  border-top: 1px solid var(--line);
-  color: #8a93a0;
-  font: 6.8pt var(--mono);
-}
-
-.page-footer strong {
-  color: var(--blue);
-  font-weight: 500;
-}
-
-.page-footer strong i {
-  color: #98a1ae;
-  font-style: normal;
-}
-
-/* Bouton d'impression */
+/* Export PDF */
 
 .download-control {
   position: fixed;
@@ -631,13 +645,11 @@ a:hover {
   border: 0;
   border-radius: 999px;
   color: #ffffff;
-  background: var(--blue-deep);
+  background: var(--green-deep);
   font: 600 14px var(--sans);
   box-shadow: 0 4px 16px #17221e30;
   cursor: pointer;
 }
-
-/* Format A4 pour l'impression PDF */
 
 @page {
   size: A4 portrait;
@@ -692,4 +704,30 @@ a:hover {
   .cv-document {
     gap: 10px;
   }
+
+  .cv-page {
+    transform-origin: top center;
+  }
+
+  .download-control {
+    position: sticky;
+    float: right;
+    right: auto;
+    bottom: auto;
+    margin: 12px;
+  }
+}
+
+/* Numéros de section 01 et 02 — première page */
+.page-one .section-title span {
+  font-size: 6.5pt;
+}
+
+/* Numéros des projets — même couleur que les numéros de section */
+.project-number {
+  color: var(--blue);
+}
+
+.page-one .section-title {
+  font-size: 10pt;
 }
